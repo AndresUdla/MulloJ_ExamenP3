@@ -3,13 +3,24 @@
     x:Class="MulloJ_ExamenP3.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MulloJ_ExamenP3"
+    xmlns:views="clr-namespace:MulloJ_ExamenP3.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="MulloJ_ExamenP3">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Crear"
+            Icon="icon_create.png"
+            ContentTemplate="{DataTemplate views:CrearSuscripcionPage}" />
 
+        <ShellContent
+            Title="Listado"
+            Icon="icon_list.png"
+            ContentTemplate="{DataTemplate views:ListadoPage}" />
+
+        <ShellContent
+            Title="Logs"
+            Icon="icon_logs.png"
+            ContentTemplate="{DataTemplate views:LogsPage}" />
+    </TabBar>
 </Shell>
