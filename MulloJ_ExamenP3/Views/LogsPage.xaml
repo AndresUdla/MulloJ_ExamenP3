@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MulloJ_ExamenP3.ViewModels"
              x:Class="MulloJ_ExamenP3.Views.LogsPage"
-             Title="LogsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Logs de Suscripciones">
+
+    <ContentPage.BindingContext>
+        <viewmodels:LogsViewModel />
+    </ContentPage.BindingContext>
+
+    <CollectionView ItemsSource="{Binding Logs}"
+                    Margin="10">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Label Text="{Binding .}" FontSize="Small" />
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
