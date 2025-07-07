@@ -7,4 +7,14 @@ public partial class LogsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        if (BindingContext is LogsViewModel vm)
+        {
+            await vm.CargarLogsAsync();
+        }
+    }
+
 }

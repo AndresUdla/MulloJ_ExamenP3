@@ -7,4 +7,13 @@ public partial class ListadoPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        if (BindingContext is ListadoViewModel vm)
+        {
+            await vm.CargarSuscripcionesAsync();
+        }
+    }
+
 }
